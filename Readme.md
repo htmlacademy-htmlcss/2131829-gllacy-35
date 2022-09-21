@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Sergey Melkozerov](https://up.htmlacademy.ru/htmlcss/35/user/2131829).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Устинов](https://htmlacademy.ru/profile/ustinov-dmitriy).
 
 ---
 
