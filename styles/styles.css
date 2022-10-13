@@ -19,7 +19,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 900;
-  src: url("../fonts/inter-400.woff2") format("woff2");
+  src: url("../fonts/inter-900.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -28,11 +28,24 @@ body {
   font-size: 16px;
   line-height: 22px;
   background-color: #FEAFC3;
-  color: #000000;
+  color: #565C66;
 }
 
-.main-header {
+.button {
+  background-color: #FCFCFC;
+  color: #2D3440;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+}
 
+.button.button-red {
+  background-color: #FF2F64;
+  color: #FCFCFC;
 }
 
 .navigation-link {
@@ -44,8 +57,98 @@ body {
   text-decoration: none;
 }
 
-.main-index {
+.navigation-list {
+  list-style: none;
+}
 
+ .contacts, .delivery-order, .news, .newsletter, .main-about {
+  background-color: #ffffff;
+  color: #000000;
+ }
+
+ .news {
+  background-image: url("/img/news-10-ways-to-lay-fruit-sherbet.jpg");
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  width: 570px;
+  height: 224px;
+  align-self: stretch;
+ }
+
+ .newsletter {
+  background-image: url("/img/post-background-lines.png");
+  background-repeat: no-repeat;
+  padding: 6px;
+  width: 570px;
+  height: 224px;
+  border-radius: 16px;
+ }
+
+ .delivery-order {
+  background-image: url("/img/delivery-background-ice-creams.jpg");
+  background-repeat: no-repeat;
+  width: 1170px;
+  height: 534px;
+  border-radius: 16px;
+
+ }
+
+ .contacts {
+  background-image: url("/img/contacts-background-ice-creams.jpg");
+  background-repeat: no-repeat;
+  width: 1170px;
+  height: 492px;
+  border-radius: 16px;
+
+ }
+
+.ice-cream-slider-item-name {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 46px;
+  color: #2D3440;
+}
+
+.ice-cream-slider-item-description {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #2D3440;
+}
+
+.ice-cream-slider-list {
+  list-style: none;
+}
+
+.gifts-item {
+  background-color: #FF7799;
+  border-radius: 16px;
+}
+
+.gifts-item-name {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #2D3440;
+}
+
+.gifts-item-description {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #2D3440;
+}
+
+.goods-item {
+  background-color: #ffffff;
 }
 
 .main-about-definition {
@@ -54,7 +157,141 @@ body {
   font-weight: 900;
   font-size: 32px;
   line-height: 46px;
+  color: #2D3440;
 
-  /* or 144% */
   text-align: center;
 }
+
+.main-about-advantages-list {
+  list-style: none;
+}
+
+.contacts-address {
+  font-style: normal;
+}
+
+.contacts-address-text {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.contacts-phone {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  text-decoration: none;
+}
+
+.contacts-schedule {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #565C66;
+}
+
+.footer-links-list {
+  list-style: none;
+}
+
+.footer-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
+  text-decoration: none;
+}
+
+.footer-link.contractor {
+  font-weight: 700;
+}
+/*Catalog*/
+
+.breadcrumbs {
+  list-style: none;
+}
+
+.breadcrumbs-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
+  text-decoration: none;
+}
+.breadcrumbs-item:last-child {
+  text-decoration: underline;
+}
+
+.filter-sort-select, .filter-price-scaler, .fat-level-list, .filter-fillers-options {
+  background-color: #FCFCFC;
+  opacity: 0.3;
+  border-radius: 20px;
+}
+
+.filter-sort, .filter-price, .filter-fat-level, .filter-fillers {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
+}
+
+.product-card {
+  background-color: #ffffff;
+}
+
+.product-card-link, .product-card-description {
+  text-decoration: none;
+}
+
+.product-card-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+}
+
+.product-card-description {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+}
+
+.product-card-price {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+}
+
+.pagination-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2D3440;
+  text-decoration: none;
+
+}
+
+/*Catalog end*/
