@@ -68,6 +68,7 @@ body {
 
  .news {
   background-image: url("/img/news-10-ways-to-lay-fruit-sherbet.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   border-radius: 16px;
   width: 570px;
@@ -77,6 +78,7 @@ body {
 
  .newsletter {
   background-image: url("/img/post-background-lines.png");
+  background-size: cover;
   background-repeat: no-repeat;
   padding: 6px;
   width: 570px;
@@ -86,6 +88,7 @@ body {
 
  .delivery-order {
   background-image: url("/img/delivery-background-ice-creams.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   width: 1170px;
   height: 534px;
@@ -95,6 +98,7 @@ body {
 
  .contacts {
   background-image: url("/img/contacts-background-ice-creams.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   width: 1170px;
   height: 492px;
