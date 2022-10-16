@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Каталог</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
     <header class="main-header">
@@ -40,18 +41,18 @@
     <main class="main-inner">
       <header class="inner-header">
         <h1 class="visually-hidden">Каталог сливочного мороженого</h1>
-        <p class="inner-header-title">Сливочное мороженое</p>
         <ul class="breadcrumbs">
          <li class="breadcrumbs-item">
             <a class="breadcrumbs-link" href="index.html">Главная</a>
           </li>
           <li class="breadcrumbs-item">
-            <a class="breadcrumbs-link">Каталог</a>
+            <a class="breadcrumbs-link" href="#">Каталог</a>
           </li>
           <li class="breadcrumbs-item">
-            <a class="breadcrumbs-link">Сливочное мороженое</a>
+            <a class="breadcrumbs-link" href="#">Сливочное мороженое</a>
           </li>
         </ul>
+        <p class="inner-header-title">Сливочное мороженое</p>
       </header>
       <section class="filter">
         <h2 class="visually-hidden">Фильтры списка товаров</h2>
@@ -65,7 +66,9 @@
           </fieldset>
           <fieldset class="filter-price">
             <legend class="filter-title">Цена:</legend>
-            <input type="text" name="filter-form-price">
+            <div class="filter-price-scaler">
+              <input type="text" name="filter-form-price">
+            </div>
           </fieldset>
           <fieldset class="filter-fat-level">
             <legend class="filter-title">Жирность:</legend>
@@ -98,26 +101,28 @@
           </fieldset>
           <fieldset class="filter-fillers">
             <legend class="filter-title">Наполнители:</legend>
-            <label class="filter-fillers">
-              <input class="filter-fillers-input" type="checkbox" name="chocolate" checked>
-              шоколадные
-            </label>
-            <label class="filter-fillers">
-              <input class="filter-fillers-input" type="checkbox" name="sugar-sprinkles" checked>
-              сахарные посыпки
-            </label>
-            <label class="filter-fillers">
-              <input class="filter-fillers-input" type="checkbox" name="fruits">
-              фрукты
-            </label>
-            <label class="filter-fillers">
-              <input class="filter-fillers-input" type="checkbox" name="syrups">
-              сиропы
-            </label>
-            <label class="filter-fillers">
-              <input class="filter-fillers-input" type="checkbox" name="jams">
-              джемы
-            </label>
+            <div class="filter-fillers-options">
+              <label class="filter-fillers">
+                <input class="filter-fillers-input" type="checkbox" name="chocolate" checked>
+                шоколадные
+              </label>
+              <label class="filter-fillers">
+                <input class="filter-fillers-input" type="checkbox" name="sugar-sprinkles" checked>
+                сахарные посыпки
+              </label>
+              <label class="filter-fillers">
+                <input class="filter-fillers-input" type="checkbox" name="fruits">
+                фрукты
+              </label>
+              <label class="filter-fillers">
+                <input class="filter-fillers-input" type="checkbox" name="syrups">
+                сиропы
+              </label>
+              <label class="filter-fillers">
+                <input class="filter-fillers-input" type="checkbox" name="jams">
+                джемы
+              </label>
+            </div>
           </fieldset>
           <button class="button" type="submit">Применить</button>
         </form>
@@ -277,7 +282,7 @@
         <h2 class="visually-hidden">Полезные ссылки</h2>
         <ul class="footer-links-list">
           <li class="footer-links-item">
-            <a class="footer-link" href="#">Для поставщиков</a>
+            <a class="footer-link contractor" href="#">Для поставщиков</a>
           </li>
           <li class="footer-links-item">
             <a class="footer-link" href="#">Наши документы</a>
@@ -289,7 +294,11 @@
             <a class="footer-link" href="#">Экологические стандарты</a>
           </li>
         </ul>
-        <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a> © 2021</p>
+      </section>
+      <section class="made-in">
+        <h2 class="visually-hidden">Ссылка на HTML-Academy</h2>
+        <a class="made-in-link" href="https://htmlacademy.ru/"><img class="logo" src="img/logo_htmlacademy.svg" width="93" height="27" alt="Логотип Академии HTML"></a>
+        <p class="made-in-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a> © 2021</p>
       </section>
     </footer>
   </body>
