@@ -23,12 +23,30 @@
   font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 22px;
   background-color: #FEAFC3;
   color: #565C66;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+.page-container {
+  width: 1170px;
+  margin: 0 auto;
 }
 
 .button {
@@ -48,7 +66,21 @@ body {
   color: #FCFCFC;
 }
 
+.navigation {
+  display: flex;
+  width: 1170px;
+  margin: 0 auto;
+}
 .navigation-link {
+  font-family: "Inter", sans-serif;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  color: #2D3440;
+  text-decoration: none;
+}
+
+.navigation-user-link {
   font-family: "Inter", sans-serif;
   line-height: 20px;
   font-style: normal;
@@ -59,51 +91,23 @@ body {
 
 .navigation-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 575px;
+  display: flex;
 }
 
- .contacts, .delivery-order, .news, .newsletter, .main-about {
-  background-color: #ffffff;
-  color: #000000;
- }
+.navigation-user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 431px;
+  margin-left: auto;
+  display: flex;
+}
 
- .news {
-  background-image: url("/img/news-10-ways-to-lay-fruit-sherbet.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 16px;
-  width: 570px;
-  height: 224px;
-  align-self: stretch;
- }
-
- .newsletter {
-  background-image: url("/img/post-background-lines.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 6px;
-  width: 570px;
-  height: 224px;
-  border-radius: 16px;
- }
-
- .delivery-order {
-  background-image: url("/img/delivery-background-ice-creams.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+ .ice-cream-slider {
   width: 1170px;
-  height: 534px;
-  border-radius: 16px;
-
- }
-
- .contacts {
-  background-image: url("/img/contacts-background-ice-creams.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 1170px;
-  height: 492px;
-  border-radius: 16px;
-
  }
 
 .ice-cream-slider-item-name {
@@ -128,9 +132,36 @@ body {
   list-style: none;
 }
 
+.gifts {
+  display: flex;
+  width: 1170px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gifts-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  text-align: center;
+}
+
+.gifts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 1170px;
+}
+
 .gifts-item {
   background-color: #FF7799;
   border-radius: 16px;
+  width: 570px;
 }
 
 .gifts-item-name {
@@ -149,11 +180,41 @@ body {
   font-size: 16px;
   line-height: 22px;
   color: #2D3440;
+  width: 328px;
+}
+
+.goods {
+  width: 1170px;
+}
+
+.goods-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  text-align: center;
+}
+
+.goods-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  width: 1170px;
+  justify-content: space-between;
 }
 
 .goods-item {
   background-color: #ffffff;
+  width: 270px;
 }
+
+.main-about, .news, .newsletter, .delivery-order, .contacts   {
+  background-color: #ffffff;
+  color: #000000;
+ }
 
 .main-about-definition {
   font-family: 'Inter', sans-serif;
@@ -162,13 +223,64 @@ body {
   font-size: 32px;
   line-height: 46px;
   color: #2D3440;
-
   text-align: center;
 }
 
 .main-about-advantages-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+
+.main-about-advantages-item {
+  width: 506px;
+}
+
+.news-columns-container {
+  width: 1170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.news {
+  background-image: url("/img/news-10-ways-to-lay-fruit-sherbet.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  width: 570px;
+  height: 224px;
+  align-self: stretch;
+ }
+
+.newsletter {
+  background-image: url("/img/post-background-lines.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 570px;
+  height: 224px;
+  border-radius: 16px;
+ }
+
+ .delivery-order {
+  background-image: url("/img/delivery-background-ice-creams.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1170px;
+  height: 534px;
+  border-radius: 16px;
+ }
+
+ .contacts {
+  background-image: url("/img/contacts-background-ice-creams.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1170px;
+  height: 492px;
+  border-radius: 16px;
+ }
 
 .contacts-address {
   font-style: normal;
@@ -201,8 +313,30 @@ body {
   color: #565C66;
 }
 
+.page-footer-container {
+  width: 1170px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.footer-social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 104px;
+  justify-content: space-between;
+  margin-right: 299px;
+}
+
 .footer-links-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 356px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .footer-link {
@@ -218,10 +352,28 @@ body {
 .footer-link.contractor {
   font-weight: 700;
 }
+
+.made-in {
+  margin-left: auto;
+  max-width: 193px;
+}
+
+.made-in-text, .htmlacademy-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2D3440;
+}
+
 /*Catalog*/
 
 .breadcrumbs {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .breadcrumbs-link {
@@ -237,9 +389,23 @@ body {
   text-decoration: underline;
 }
 
+.inner-header-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+}
+
+.filter {
+  display: flex;
+  width: 823px;
+  flex-wrap: wrap;
+}
+
 .filter-sort-select, .filter-price-scaler, .fat-level-list, .filter-fillers-options {
-  background-color: #FCFCFC;
-  opacity: 0.3;
+  background-color: rgba(252, 252, 252, 0.3);
   border-radius: 20px;
 }
 
@@ -250,9 +416,39 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #2D3440;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-sort {
+  width: 196px;
+}
+
+.filter-price {
+  width: 196px;
+}
+
+.filter-fat-level {
+  width: 383px;
+}
+
+.filter-fillers {
+  width: 604px;
+}
+
+.product-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 1170px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .product-card {
+  width: 270px;
   background-color: #ffffff;
 }
 
@@ -267,6 +463,7 @@ body {
   font-size: 20px;
   line-height: 24px;
   color: #2D3440;
+  text-align: center;
 }
 
 .product-card-description {
@@ -276,6 +473,7 @@ body {
   font-size: 16px;
   line-height: 22px;
   color: #565C66;
+  text-align: center;
 }
 
 .product-card-price {
@@ -287,6 +485,26 @@ body {
   color: #2D3440;
 }
 
+.pagination-container {
+  display: flex;
+  margin: 0 auto;
+  width: 1170px;
+}
+
+.pagination-show-more {
+  width: 179px;
+  margin-left: 496px;
+}
+
+.pagination {
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+  max-width: 168px;
+}
+
 .pagination-link {
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -295,7 +513,6 @@ body {
   line-height: 20px;
   color: #2D3440;
   text-decoration: none;
-
 }
 
 /*Catalog end*/
