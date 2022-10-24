@@ -23,6 +23,28 @@
   font-display: swap;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.ice-cream-slider-item:not(.ice-cream-slider-item-current) { /*Temporary*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 html {
   height: 100%;
 }
@@ -32,12 +54,16 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 22px;
   background-color: #FEAFC3;
   color: #565C66;
+}
+
+.page-header {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .main-container {
@@ -71,13 +97,43 @@ body {
   width: 1170px;
   margin: 0 auto;
 }
-.navigation-link {
+
+.navigation-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 575px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 56px;
+}
+
+.navigation-user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 56px;
+}
+
+.navigation-link:not(.logo) {
   font-family: "Inter", sans-serif;
   line-height: 20px;
   font-style: normal;
   font-weight: 400;
   color: #2D3440;
   text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+  min-width: 32px;
+  min-height: 32px;
+}
+.logo {
+  padding-right: 16px;
 }
 
 .navigation-user-link {
@@ -87,28 +143,25 @@ body {
   font-weight: 400;
   color: #2D3440;
   text-decoration: none;
-}
-
-.navigation-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 575px;
-  display: flex;
-}
-
-.navigation-user-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  max-width: 431px;
-  margin-left: auto;
-  display: flex;
+  padding: 8px 16px;
+  display: block;
+  min-width: 32px;
+  min-height: 32px;
 }
 
  .ice-cream-slider {
   width: 1170px;
+  margin-bottom: 80px;
+  display: flex;
  }
+
+ .ice-cream-slider-list {
+  list-style: none;
+}
+
+.ice-cream-slider-item {
+  display: flex;
+}
 
 .ice-cream-slider-item-name {
   font-family: 'Inter', sans-serif;
@@ -117,6 +170,7 @@ body {
   font-size: 36px;
   line-height: 46px;
   color: #2D3440;
+  max-width: 470px;
 }
 
 .ice-cream-slider-item-description {
@@ -126,9 +180,10 @@ body {
   font-size: 18px;
   line-height: 24px;
   color: #2D3440;
+  max-width: 470px;
 }
 
-.ice-cream-slider-list {
+.ice-cream-slider-social-list {
   list-style: none;
 }
 
@@ -137,6 +192,7 @@ body {
   width: 1170px;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 80px;
 }
 
 .gifts-title {
@@ -147,6 +203,9 @@ body {
   line-height: 46px;
   color: #2D3440;
   text-align: center;
+  margin: 0;
+  margin-bottom: 55px;
+  max-width: 434px;
 }
 
 .gifts-list {
@@ -162,6 +221,10 @@ body {
   background-color: #FF7799;
   border-radius: 16px;
   width: 570px;
+  min-height: 268px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .gifts-item-name {
@@ -171,6 +234,9 @@ body {
   font-size: 24px;
   line-height: 30px;
   color: #2D3440;
+  margin: 0;
+  margin-bottom: 28px;
+  padding-left: 36px;
 }
 
 .gifts-item-description {
@@ -181,10 +247,20 @@ body {
   line-height: 22px;
   color: #2D3440;
   width: 328px;
+  margin: 0;
+  margin-bottom: 28px;
+  padding-left: 36px;
+}
+
+.gifts-item-order {
+  min-height: 44px;
+  min-width: 176px;
+  padding-left: 36px;
 }
 
 .goods {
   width: 1170px;
+  margin-bottom: 80px;
 }
 
 .goods-title {
@@ -195,6 +271,8 @@ body {
   line-height: 46px;
   color: #2D3440;
   text-align: center;
+  margin: 0;
+  margin-bottom: 56px;
 }
 
 .goods-list {
@@ -209,12 +287,62 @@ body {
 .goods-item {
   background-color: #ffffff;
   width: 270px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.goods-item-name {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  margin: 0;
+  min-width: 270px; /*Don't sure, only for malinka*/
+  text-align: center;
+}
+
+.goods-item-description {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  margin: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.goods-item-price {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  margin: 0;
+  margin-bottom: 28px;
+  margin-right: 73px;
+}
+
+.goods-item-buy {
+  min-width: 32px;
+  min-height: 32px;
+  margin-bottom: 24px;
 }
 
 .main-about, .news, .newsletter, .delivery-order, .contacts   {
   background-color: #ffffff;
   color: #000000;
  }
+
+.main-about {
+  margin-bottom: 80px;
+  border-radius: 16px;
+}
 
 .main-about-definition {
   font-family: 'Inter', sans-serif;
@@ -224,6 +352,9 @@ body {
   line-height: 46px;
   color: #2D3440;
   text-align: center;
+  margin: 0;
+  padding-top: 80px;
+  margin-bottom: 56px;
 }
 
 .main-about-advantages-list {
@@ -233,16 +364,22 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding-bottom: 80px;
 }
 
 .main-about-advantages-item {
   width: 506px;
 }
 
+.main-about-advantages-description {
+  margin: 0;
+}
+
 .news-columns-container {
   width: 1170px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 80px;
 }
 
 .news {
@@ -252,8 +389,30 @@ body {
   border-radius: 16px;
   width: 570px;
   height: 224px;
-  align-self: stretch;
+  padding: 32px;
+  box-sizing: border-box;
  }
+
+.news-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #565C66;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.news-text {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #2D3440;
+  margin: 0;
+}
 
 .newsletter {
   background-image: url("/img/post-background-lines.png");
@@ -262,15 +421,72 @@ body {
   width: 570px;
   height: 224px;
   border-radius: 16px;
+  padding: 32px;
+  box-sizing: border-box;
  }
 
+.newsletter-proposal {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  max-width: 506px;
+  margin: 0;
+  margin-bottom: 42px;
+}
+
+/*
+I decided to make flexible text in delivery-order section and not solid margin.
+It's not like in layout, but fells better.
+*/
  .delivery-order {
   background-image: url("/img/delivery-background-ice-creams.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 1170px;
-  height: 534px;
+  min-height: 534px;
   border-radius: 16px;
+  box-sizing: border-box;
+  padding: 64px;
+  padding-left: 100px;
+  display: flex;
+  margin-bottom: 80px;
+ }
+
+ .delivery-proposal-container {
+  margin-right: 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+
+ .delivery-order-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  margin: 0;
+  margin-bottom: 24px;
+ }
+
+.delivery-order-description {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  margin: 0;
+}
+
+ .delivery-order-form {
+  background-color: white; /*Temporary*/
+  min-width: 500px;
+  height: 406px;
  }
 
  .contacts {
@@ -280,10 +496,32 @@ body {
   width: 1170px;
   height: 492px;
   border-radius: 16px;
+  padding: 64px;
+  display: flex;
+  justify-content: start;
+  box-sizing: border-box;
  }
+
+.contacts-container {
+  background-color: white; /*Temporary*/
+  box-sizing: border-box;
+  width: 343px;
+  padding: 40px;
+}
 
 .contacts-address {
   font-style: normal;
+}
+
+.contacts-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  margin: 0;
+  margin-bottom: 12px;
 }
 
 .contacts-address-text {
@@ -292,6 +530,9 @@ body {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
+  color: #2D3440;
+  margin: 0;
+  margin-bottom: 24px;
 }
 
 .contacts-phone {
@@ -305,18 +546,21 @@ body {
 }
 
 .contacts-schedule {
-  font-family: 'Inter';
+  font-family: 'Inter',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: #565C66;
+  margin: 0;
+  margin-bottom: 32px;
 }
 
 .page-footer-container {
   width: 1170px;
   display: flex;
   margin: 0 auto;
+  padding: 48px 0;
 }
 
 .footer-social-list {
@@ -324,9 +568,11 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   width: 104px;
   justify-content: space-between;
   margin-right: 299px;
+  margin-bottom: 30px;
 }
 
 .footer-links-list {
@@ -369,6 +615,11 @@ body {
 
 /*Catalog*/
 
+.inner-header {
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
 .breadcrumbs {
   list-style: none;
   margin: 0;
@@ -396,12 +647,14 @@ body {
   font-size: 32px;
   line-height: 46px;
   color: #2D3440;
+  margin: 0;
 }
 
 .filter {
   display: flex;
   width: 823px;
   flex-wrap: wrap;
+  margin-bottom: 44px;
 }
 
 .filter-sort-select, .filter-price-scaler, .fat-level-list, .filter-fillers-options {
@@ -437,6 +690,10 @@ body {
   width: 604px;
 }
 
+.product {
+  margin-bottom: 40px;
+}
+
 .product-list {
   list-style: none;
   display: flex;
@@ -445,11 +702,13 @@ body {
   width: 1170px;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 
 .product-card {
   width: 270px;
   background-color: #ffffff;
+  margin-bottom: 40px;
 }
 
 .product-card-link, .product-card-description {
@@ -489,6 +748,7 @@ body {
   display: flex;
   margin: 0 auto;
   width: 1170px;
+  padding: 41px 0;
 }
 
 .pagination-show-more {
