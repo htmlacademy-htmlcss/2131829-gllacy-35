@@ -1,0 +1,923 @@
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-400.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-700.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/inter-900.woff2") format("woff2");
+  font-display: swap;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.ice-cream-slider-item:not(.ice-cream-slider-item-current) { /*Temporary*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: #FEAFC3;
+  color: #565C66;
+}
+
+.page-header {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+.page-container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: #FCFCFC;
+  color: #2D3440;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button.button-red {
+  background-color: #FF2F64;
+  color: #FCFCFC;
+}
+
+.navigation {
+  display: flex;
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.navigation-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 575px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 56px;
+}
+
+.navigation-user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 56px;
+}
+
+.navigation-link:not(.logo) {
+  font-family: "Inter", sans-serif;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  color: #2D3440;
+  text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+  min-width: 32px;
+  min-height: 32px;
+}
+.logo {
+  padding-right: 16px;
+}
+
+.navigation-user-link {
+  font-family: "Inter", sans-serif;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  color: #2D3440;
+  text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+ .ice-cream-slider {
+  width: 1170px;
+  margin-bottom: 80px;
+  display: flex;
+ }
+
+ .ice-cream-slider-list {
+  list-style: none;
+}
+
+.ice-cream-slider-item {
+  display: flex;
+}
+
+.ice-cream-slider-item-name {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 46px;
+  color: #2D3440;
+  max-width: 470px;
+}
+
+.ice-cream-slider-item-description {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #2D3440;
+  max-width: 470px;
+}
+
+.ice-cream-slider-social-list {
+  list-style: none;
+}
+
+.gifts {
+  display: flex;
+  width: 1170px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.gifts-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 55px;
+  max-width: 434px;
+}
+
+.gifts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 1170px;
+}
+
+.gifts-item {
+  background-color: #FF7799;
+  border-radius: 16px;
+  width: 570px;
+  min-height: 268px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gifts-item-name {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #2D3440;
+  margin: 0;
+  margin-bottom: 28px;
+  padding-left: 36px;
+}
+
+.gifts-item-description {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #2D3440;
+  width: 328px;
+  margin: 0;
+  margin-bottom: 28px;
+  padding-left: 36px;
+}
+
+.gifts-item-order {
+  min-height: 44px;
+  min-width: 176px;
+  padding-left: 36px;
+}
+
+.goods {
+  width: 1170px;
+  margin-bottom: 80px;
+}
+
+.goods-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 56px;
+}
+
+.goods-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  gap: 30px;
+}
+
+.goods-item {
+  background-color: #FCFCFC;
+  border-radius: 8px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.goods-image {
+  display: block;
+  width: 168px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
+.goods-item-name {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.goods-item-description {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  text-align: center;
+  margin-bottom: auto;
+}
+
+.goods-item-price-buy-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.goods-item-price {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+}
+
+.goods-item-buy {
+  min-width: 32px;
+  min-height: 32px;
+}
+
+/* Backup before chage flex to grid
+.goods {
+  width: 1170px;
+  margin-bottom: 80px;
+}
+
+.goods-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 56px;
+}
+
+.goods-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  width: 1170px;
+  justify-content: space-between;
+}
+
+.goods-item {
+  background-color: #ffffff;
+  width: 270px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.goods-item-name {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  margin: 0;
+  min-width: 270px; /*Don't sure, only for malinka*//*
+  text-align: center;
+}
+
+.goods-item-description {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  margin: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.goods-item-price {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  margin: 0;
+  margin-bottom: 28px;
+  margin-right: 73px;
+}
+
+.goods-item-buy {
+  min-width: 32px;
+  min-height: 32px;
+  margin-bottom: 24px;
+}
+*/
+
+.main-about, .news, .newsletter, .delivery-order, .contacts   {
+  background-color: #ffffff;
+  color: #000000;
+ }
+
+.main-about {
+  margin-bottom: 80px;
+  border-radius: 16px;
+  padding: 80px 64px;
+}
+
+.main-about-definition {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 56px;
+}
+
+.main-about-advantages-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 505px);
+  gap: 40px 32px;
+}
+
+/* Backup flex to grid
+.main-about-advantages-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+*/
+
+.main-about-advantages-item {
+  width: 506px;
+}
+
+.main-about-advantages-description {
+  margin: 0;
+}
+
+.news-columns-container {
+  width: 1170px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.news {
+  background-image: url("/img/news-10-ways-to-lay-fruit-sherbet.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  width: 570px;
+  min-height: 224px;
+  padding: 32px;
+  box-sizing: border-box;
+ }
+
+.news-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #565C66;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.news-text {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #2D3440;
+  margin: 0;
+}
+
+.newsletter {
+  background-image: url("/img/post-background-lines.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 570px;
+  border-radius: 16px;
+  padding: 32px;
+  box-sizing: border-box;
+ }
+
+.newsletter-proposal {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  max-width: 506px;
+  margin: 0;
+  margin-bottom: 42px;
+}
+
+/*
+I decided to make flexible text in delivery-order section and not solid margin.
+It's not like in layout, but fells better.
+*/
+
+.delivery-order {
+  background-image: url("/img/delivery-background-ice-creams.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1170px;
+  min-height: 534px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  padding: 64px;
+  padding-left: 100px;
+  display: flex;
+  column-gap: 130px;
+  margin-bottom: 80px;
+ }
+
+ .delivery-proposal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+
+ .delivery-order-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  margin: 0;
+  margin-bottom: 24px;
+ }
+
+.delivery-order-description {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  margin: 0;
+}
+
+ .delivery-order-form {
+  background-color: white; /*Temporary*/
+  min-width: 500px;
+  height: 406px;
+ }
+
+ .contacts {
+  background-image: url("/img/contacts-background-ice-creams.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1170px;
+  height: 492px;
+  border-radius: 16px;
+  padding: 64px;
+  display: flex;
+  justify-content: start;
+  box-sizing: border-box;
+ }
+
+.contacts-container {
+  background-color: white; /*Temporary*/
+  box-sizing: border-box;
+  width: 343px;
+  padding: 40px;
+}
+
+.contacts-address {
+  font-style: normal;
+}
+
+.contacts-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.contacts-address-text {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.contacts-phone {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  text-decoration: none;
+}
+
+.contacts-schedule {
+  font-family: 'Inter',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #565C66;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.page-footer-container {
+  width: 1170px;
+  display: flex;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.footer-social {
+  max-width: 30%;
+}
+
+.footer-social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.footer-links {
+  margin-left: auto;
+  max-width: 30%;
+}
+
+.footer-links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(max-content, 50%) minmax(max-content, 50%);
+  grid-template-rows: repeat(auto-fill, max-content);
+  row-gap: 8px;
+  column-gap: 24px;
+}
+
+.footer-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
+  text-decoration: none;
+}
+
+.footer-link.contractor {
+  font-weight: 700;
+}
+
+.made-in {
+  margin-left: auto;
+  max-width: 193px;
+}
+
+.made-in-text, .htmlacademy-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2D3440;
+}
+
+/*Catalog*/
+
+.inner-header {
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+.breadcrumbs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.breadcrumbs-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
+  text-decoration: none;
+}
+.breadcrumbs-item:last-child {
+  text-decoration: underline;
+}
+
+.inner-header-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  margin: 0;
+}
+
+.filter {
+  display: flex;
+  width: 823px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.filter-sort-select, .filter-price-scaler, .fat-level-list, .filter-fillers-options {
+  background-color: rgba(252, 252, 252, 0.3);
+  border-radius: 20px;
+}
+
+.filter-sort, .filter-price, .filter-fat-level, .filter-fillers {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2D3440;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-sort {
+  width: 196px;
+}
+
+.filter-price {
+  width: 196px;
+}
+
+.filter-fat-level {
+  width: 383px;
+}
+
+.filter-fillers {
+  width: 604px;
+}
+
+.product {
+  margin-bottom: 40px;
+}
+
+.product-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 270px 270px 270px 270px;
+  column-gap: 30px;
+  row-gap: 40px;
+  margin: 0;
+  padding: 0;
+  width: 1170px;
+  margin-bottom: 16px;
+}
+
+.product-card {
+  background-color: #FCFCFC;
+  border-radius: 8px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.product-card-link {
+  text-decoration: none;
+}
+
+.product-card-image {
+  display: block;
+  width: 168px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
+.product-card-title {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.product-card-description {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  text-align: center;
+  margin-bottom: auto;
+}
+
+.card-price-buy-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.product-card-price {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+}
+
+.pagination-container {
+  display: flex;
+  margin: 0 auto;
+  width: 1170px;
+  padding: 41px 0;
+}
+
+.pagination-show-more {
+  width: 179px;
+  margin-left: 496px;
+}
+
+.pagination {
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+  max-width: 168px;
+}
+
+.pagination-link {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2D3440;
+  text-decoration: none;
+}
+
+/*Catalog end*/
