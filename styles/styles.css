@@ -264,6 +264,102 @@ body {
 }
 
 .goods-title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: #2D3440;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 56px;
+}
+
+.goods-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  gap: 30px;
+}
+
+.goods-item {
+  background-color: #FCFCFC;
+  border-radius: 8px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.goods-image {
+  display: block;
+  width: 168px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
+.goods-item-name {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.goods-item-description {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #565C66;
+  text-align: center;
+  margin-bottom: auto;
+}
+
+.goods-item-price-buy-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.goods-item-price {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #2D3440;
+}
+
+.goods-item-buy {
+  min-width: 32px;
+  min-height: 32px;
+}
+
+/* Backup before chage flex to grid
+.goods {
+  width: 1170px;
+  margin-bottom: 80px;
+}
+
+.goods-title {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
@@ -300,7 +396,7 @@ body {
   line-height: 24px;
   color: #2D3440;
   margin: 0;
-  min-width: 270px; /*Don't sure, only for malinka*/
+  min-width: 270px; /*Don't sure, only for malinka*//*
   text-align: center;
 }
 
@@ -333,6 +429,7 @@ body {
   min-height: 32px;
   margin-bottom: 24px;
 }
+*/
 
 .main-about, .news, .newsletter, .delivery-order, .contacts   {
   background-color: #ffffff;
@@ -342,6 +439,7 @@ body {
 .main-about {
   margin-bottom: 80px;
   border-radius: 16px;
+  padding: 80px 64px;
 }
 
 .main-about-definition {
@@ -353,7 +451,6 @@ body {
   color: #2D3440;
   text-align: center;
   margin: 0;
-  padding-top: 80px;
   margin-bottom: 56px;
 }
 
@@ -361,11 +458,21 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 505px);
+  gap: 40px 32px;
+}
+
+/* Backup flex to grid
+.main-about-advantages-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding-bottom: 80px;
 }
+*/
 
 .main-about-advantages-item {
   width: 506px;
@@ -388,7 +495,7 @@ body {
   background-repeat: no-repeat;
   border-radius: 16px;
   width: 570px;
-  height: 224px;
+  min-height: 224px;
   padding: 32px;
   box-sizing: border-box;
  }
@@ -419,7 +526,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   width: 570px;
-  height: 224px;
   border-radius: 16px;
   padding: 32px;
   box-sizing: border-box;
@@ -441,7 +547,8 @@ body {
 I decided to make flexible text in delivery-order section and not solid margin.
 It's not like in layout, but fells better.
 */
- .delivery-order {
+
+.delivery-order {
   background-image: url("/img/delivery-background-ice-creams.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -452,11 +559,11 @@ It's not like in layout, but fells better.
   padding: 64px;
   padding-left: 100px;
   display: flex;
+  column-gap: 130px;
   margin-bottom: 80px;
  }
 
  .delivery-proposal-container {
-  margin-right: 135px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -563,26 +670,35 @@ It's not like in layout, but fells better.
   padding: 48px 0;
 }
 
+.footer-social {
+  max-width: 30%;
+}
+
 .footer-social-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  width: 104px;
-  justify-content: space-between;
-  margin-right: 299px;
+
+  gap: 16px;
   margin-bottom: 30px;
+}
+
+.footer-links {
+  margin-left: auto;
+  max-width: 30%;
 }
 
 .footer-links-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  width: 356px;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(max-content, 50%) minmax(max-content, 50%);
+  grid-template-rows: repeat(auto-fill, max-content);
+  row-gap: 8px;
+  column-gap: 24px;
 }
 
 .footer-link {
@@ -696,26 +812,42 @@ It's not like in layout, but fells better.
 
 .product-list {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: 270px 270px 270px 270px;
+  column-gap: 30px;
+  row-gap: 40px;
   margin: 0;
   padding: 0;
   width: 1170px;
-  flex-wrap: wrap;
-  justify-content: space-between;
   margin-bottom: 16px;
 }
 
 .product-card {
-  width: 270px;
-  background-color: #ffffff;
-  margin-bottom: 40px;
+  background-color: #FCFCFC;
+  border-radius: 8px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
-.product-card-link, .product-card-description {
+.product-card-link {
   text-decoration: none;
 }
 
+.product-card-image {
+  display: block;
+  width: 168px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+
 .product-card-title {
+  margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -723,9 +855,13 @@ It's not like in layout, but fells better.
   line-height: 24px;
   color: #2D3440;
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .product-card-description {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -733,6 +869,15 @@ It's not like in layout, but fells better.
   line-height: 22px;
   color: #565C66;
   text-align: center;
+  margin-bottom: auto;
+}
+
+.card-price-buy-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
 }
 
 .product-card-price {
