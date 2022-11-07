@@ -64,6 +64,8 @@ body {
 .page-header {
   padding-top: 24px;
   padding-bottom: 24px;
+  width: 1170px;
+  margin: 0 auto;
 }
 
 .main-container {
@@ -76,7 +78,9 @@ body {
 }
 
 .button {
-  background-color: #FCFCFC;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
   color: #2D3440;
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -85,11 +89,122 @@ body {
   line-height: 20px;
   text-align: center;
   text-decoration: none;
+  background-color: #FCFCFC;
+  border-radius: 26px;
+  outline: 4px solid rgba(252, 252, 252, 0.4);
+  box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1);
+  padding: 12px 32px;
 }
 
-.button.button-red {
+.button.button-action {
   background-color: #FF2F64;
   color: #FCFCFC;
+  outline: 4px solid rgba(255, 47, 100, 0.3);
+}
+
+.button.button-filter-submit {
+  min-width: 185px;
+  font-size: 14px;
+  background-color: rgba(252, 252, 252, 0.3);
+  border-radius: 20px;
+  outline: 2px solid #FCFCFC;
+  padding: 8px 32px;
+}
+
+.button-buy {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  min-width: 32px;
+  min-height: 32px;
+  background-color: #FF2F64;
+  border-radius: 26px;
+  outline: 2px solid #FF2F64;
+  outline-offset: -2px;
+}
+
+.buy-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #FCFCFC;
+}
+
+.button-buy:hover {
+  background-color: rgba(252, 252, 252, 0.3);
+}
+
+.button-buy:hover .buy-icon{
+  fill: #242424;
+}
+
+.button-buy:focus {
+  background-color: #FF2F64;
+  outline: 2px solid #2D3440;
+}
+
+.button-buy:focus .buy-icon{
+  fill: #FCFCFC;
+}
+
+.button-buy:active {
+  background-color: #FFCBD8;
+  outline: 2px solid #FF2F64;
+}
+
+.button-buy:active .buy-icon{
+  fill: #2D3440;
+}
+
+.button-buy:disabled {
+  background-color: #B9B9B9;
+  outline: none;
+}
+
+.button-buy:disabled .buy-icon{
+  fill: #565C66;
+}
+
+.social-link {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+}
+
+.social-icon rect {
+  stroke: rgba(252, 252, 252, 0.3);
+}
+
+.social-link:hover circle {
+  fill: #2D3440;
+}
+
+.social-link:hover rect {
+  stroke: rgba(252, 252, 252, 0.5);
+}
+
+.social-link:focus circle {
+  fill: #2D3440;
+}
+
+.social-link:focus rect {
+  stroke: #2D3440;
+}
+
+.social-link:active .social-icon {
+  opacity: 0.5;
+}
+
+.social-link:active circle {
+  fill: #2D3440;
+}
+
+.social-link:active rect {
+  stroke: rgba(252, 252, 252, 0.5);
 }
 
 .navigation {
@@ -102,11 +217,45 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 575px;
+  max-width: 575px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   min-height: 56px;
+}
+
+.navigation-link:not(.logo) {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  color: #2D3440;
+  text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+}
+
+.navigation-link.logo {
+  display: block;
+  padding-right: 16px;
+}
+
+.navigation-link .logo-icon {
+  display: block;
+}
+
+.navigation-link.catalog {
+  padding-right: 38px;
+}
+
+.catalog .navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  bottom: 0;
+  left: auto;
+  margin: auto;
 }
 
 .navigation-user-list {
@@ -118,22 +267,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   min-height: 56px;
-}
-
-.navigation-link:not(.logo) {
-  font-family: "Inter", sans-serif;
-  line-height: 20px;
-  font-style: normal;
-  font-weight: 400;
-  color: #2D3440;
-  text-decoration: none;
-  padding: 8px 16px;
-  display: block;
-  min-width: 32px;
-  min-height: 32px;
-}
-.logo {
-  padding-right: 16px;
+  gap: 16px;
 }
 
 .navigation-user-link {
@@ -141,12 +275,51 @@ body {
   line-height: 20px;
   font-style: normal;
   font-weight: 400;
+  font-size: 14px;
   color: #2D3440;
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 6px 16px;
+  padding-left: 38px;
   display: block;
-  min-width: 32px;
-  min-height: 32px;
+  background-color: rgba(252, 252, 252, 0.3);
+  border-radius: 30px;
+  position: relative;
+
+}
+
+.navigation-user-link[href^="tel:"] {
+  margin: 0;
+  margin-right: 1px;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2D3440;
+  background: none;
+  border-radius: unset;
+}
+
+.navigation-user-link.search {
+  padding: 16px;
+}
+
+.navigation-user-icon {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 16px;
+  margin: auto 0;
+}
+
+.search .navigation-user-icon {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
 }
 
  .ice-cream-slider {
@@ -213,11 +386,13 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
   width: 1170px;
 }
 
 .gifts-item {
+  box-sizing: border-box;
   background-color: #FF7799;
   border-radius: 16px;
   width: 570px;
@@ -225,6 +400,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  padding: 36px;
 }
 
 .gifts-item-name {
@@ -236,7 +413,6 @@ body {
   color: #2D3440;
   margin: 0;
   margin-bottom: 28px;
-  padding-left: 36px;
 }
 
 .gifts-item-description {
@@ -249,13 +425,6 @@ body {
   width: 328px;
   margin: 0;
   margin-bottom: 28px;
-  padding-left: 36px;
-}
-
-.gifts-item-order {
-  min-height: 44px;
-  min-width: 176px;
-  padding-left: 36px;
 }
 
 .goods {
@@ -340,101 +509,22 @@ body {
 }
 
 .goods-item-price {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: #2D3440;
-}
-
-.goods-item-buy {
-  min-width: 32px;
-  min-height: 32px;
-}
-
-/* Backup before chage flex to grid
-.goods {
-  width: 1170px;
-  margin-bottom: 80px;
-}
-
-.goods-title {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 46px;
-  color: #2D3440;
-  text-align: center;
-  margin: 0;
-  margin-bottom: 56px;
-}
-
-.goods-list {
   padding: 0;
   margin: 0;
-  list-style: none;
-  display: flex;
-  width: 1170px;
-  justify-content: space-between;
-}
-
-.goods-item {
-  background-color: #ffffff;
-  width: 270px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.goods-item-name {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #2D3440;
-  margin: 0;
-  min-width: 270px; /*Don't sure, only for malinka*//*
-  text-align: center;
 }
 
-.goods-item-description {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: #565C66;
-  margin: 0;
-  margin-bottom: 16px;
-  text-align: center;
-}
 
-.goods-item-price {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: #2D3440;
-  margin: 0;
-  margin-bottom: 28px;
-  margin-right: 73px;
-}
 
-.goods-item-buy {
-  min-width: 32px;
-  min-height: 32px;
-  margin-bottom: 24px;
-}
-*/
-
-.main-about, .news, .newsletter, .delivery-order, .contacts   {
+/* .main-about, .news, .newsletter, .delivery-order, .contacts   { ?????
   background-color: #ffffff;
   color: #000000;
- }
+ } */
 
 .main-about {
   margin-bottom: 80px;
@@ -463,23 +553,32 @@ body {
   gap: 40px 32px;
 }
 
-/* Backup flex to grid
-.main-about-advantages-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-*/
-
 .main-about-advantages-item {
-  width: 506px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 48px 48px;
+}
+
+.main-about-advantages-item:nth-child(1) {
+  background-image: url("../img/ice-cream-black.svg");
+}
+
+.main-about-advantages-item:nth-child(2) {
+  background-image: url("../img/cow-black.svg");
+}
+
+.main-about-advantages-item:nth-child(3) {
+  background-image: url("../img/leaf-black.svg");
+}
+
+.main-about-advantages-item:nth-child(4) {
+  background-image: url("../img/thermometer-black.svg");
 }
 
 .main-about-advantages-description {
   margin: 0;
+  padding: 0;
+  padding-left: 64px;
 }
 
 .news-columns-container {
@@ -490,7 +589,7 @@ body {
 }
 
 .news {
-  background-image: url("/img/news-10-ways-to-lay-fruit-sherbet.jpg");
+  background-image: url("../img/news-10-ways-to-lay-fruit-sherbet.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 16px;
@@ -522,7 +621,7 @@ body {
 }
 
 .newsletter {
-  background-image: url("/img/post-background-lines.png");
+  background-image: url("../img/post-background-lines.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 570px;
@@ -549,7 +648,7 @@ It's not like in layout, but fells better.
 */
 
 .delivery-order {
-  background-image: url("/img/delivery-background-ice-creams.jpg");
+  background-image: url("../img/delivery-background-ice-creams.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 1170px;
@@ -597,7 +696,7 @@ It's not like in layout, but fells better.
  }
 
  .contacts {
-  background-image: url("/img/contacts-background-ice-creams.jpg");
+  background-image: url("../img/contacts-background-ice-creams.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 1170px;
@@ -610,10 +709,11 @@ It's not like in layout, but fells better.
  }
 
 .contacts-container {
-  background-color: white; /*Temporary*/
+  background-color: #FCFCFC;
   box-sizing: border-box;
   width: 343px;
   padding: 40px;
+  border-radius: 8px;
 }
 
 .contacts-address {
@@ -671,7 +771,7 @@ It's not like in layout, but fells better.
 }
 
 .footer-social {
-  max-width: 30%;
+  max-width: 104px;
 }
 
 .footer-social-list {
@@ -680,28 +780,30 @@ It's not like in layout, but fells better.
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-
   gap: 16px;
   margin-bottom: 30px;
 }
 
 .footer-links {
-  margin-left: auto;
-  max-width: 30%;
+  margin-left: 302px;
+  max-width: 356px;
 }
 
 .footer-links-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-left: 24px;
   display: grid;
   grid-template-columns: minmax(max-content, 50%) minmax(max-content, 50%);
   grid-template-rows: repeat(auto-fill, max-content);
-  row-gap: 8px;
+  row-gap: 7px;
   column-gap: 24px;
+
 }
 
 .footer-link {
+  display: block;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -711,16 +813,52 @@ It's not like in layout, but fells better.
   text-decoration: none;
 }
 
+.footer-links-item {
+  position: relative;
+}
+
 .footer-link.contractor {
   font-weight: 700;
 }
 
+.contractor::before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  top: 2px;
+  bottom: 0;
+  left: -24px;
+  background-image: url("../img/heart-fill-black.svg");
+
+}
+
 .made-in {
+  margin-top: auto;
+  margin-bottom: auto;
   margin-left: auto;
+  margin-right: 14px;
   max-width: 193px;
 }
 
-.made-in-text, .htmlacademy-link {
+.made-in-link {
+  display: block;
+  width: 93px;
+  margin-bottom: 10px;
+}
+
+.made-in-text {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2D3440;
+}
+
+.htmlacademy-link {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -897,8 +1035,7 @@ It's not like in layout, but fells better.
 }
 
 .pagination-show-more {
-  width: 179px;
-  margin-left: 496px;
+  margin-left: 489px;
 }
 
 .pagination {
@@ -907,10 +1044,13 @@ It's not like in layout, but fells better.
   margin-left: auto;
   list-style: none;
   display: flex;
+  align-items: center;
   max-width: 168px;
 }
 
 .pagination-link {
+  display: block;
+  box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -918,6 +1058,28 @@ It's not like in layout, but fells better.
   line-height: 20px;
   color: #2D3440;
   text-decoration: none;
+  width: 24px;
+  height: 24px;
+  padding: 2px 8px;
+}
+
+.pagination-prev svg, .pagination-next svg {
+  padding: 4px 0;
+}
+
+.pagination-prev {
+  padding: 0;
+  text-align: start;
+}
+
+.pagination-next {
+  padding: 0;
+  text-align: end;
+}
+
+.pagination-current {
+  background-color: #FCFCFC;
+  border-radius: 76px;
 }
 
 /*Catalog end*/
