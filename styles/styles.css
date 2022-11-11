@@ -227,6 +227,131 @@ body {
   fill: #2D3440;
 }
 
+.ice-cream-slider-button {
+  display:block;
+  line-height: 0;
+  padding: 0 17.5px;
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border: 2px solid #FCFCFC;
+  border-radius: 26px;
+  background-color: rgba(252, 252, 252, 0.3);
+  cursor: pointer;
+}
+
+.ice-cream-slider-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -4px;
+  margin-left: -5px;
+  width: 6px;
+  height: 6px;
+  border-top: 1.4px solid #FCFCFC;
+  border-right: 1.4px solid #FCFCFC;
+  border-top-right-radius: 1px;
+  border-top-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  transform: rotate(45deg);
+}
+
+.ice-cream-slider-left {
+  transform: rotate(180deg);
+}
+
+.ice-cream-slider-button:hover::before {
+  border-color: #2D3440;
+}
+
+.ice-cream-slider-button:hover {
+  background-color: #FCFCFC;
+}
+
+.ice-cream-slider-button:focus::before {
+  border-color: #2D3440;
+}
+
+.ice-cream-slider-button:focus {
+  outline: none;
+  background: rgba(252, 252, 252, 0.3);
+  border-color: #2D3440;
+}
+
+.ice-cream-slider-button:active::before {
+  border-color: #2D3440;
+}
+
+.ice-cream-slider-button:active {
+  background: rgba(252, 252, 252, 0.5);
+  border-color: rgba(252, 252, 252, 0);
+}
+
+.form-field {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2D3440;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9B9;
+  border-radius: 4px;
+  height: 48px;
+  padding: 0;
+  padding-left: 16px;
+}
+
+.form-field::placeholder {
+  color: #B9B9B9;
+}
+
+.form-field:hover {
+  border-color: #2D3440;
+}
+
+.form-field:focus {
+  padding-left: 15px;
+  border: 2px solid #2D3440;
+}
+
+.form-field:disabled {
+  color: #2D3440;
+  background-color: #E7E7E7;
+  border-color: #B9B9B9;
+}
+
+.form-field:disabled::placeholder {
+  color: rgb(45, 52, 64, 0.65);
+}
+
+.form-field:disabled:hover {
+  color: #2D3440;
+  background-color: #E7E7E7;
+  border-color: #B9B9B9;
+}
+
+.form-field:disabled:hover::placeholder {
+  color: rgb(45, 52, 64, 1);
+}
+
+.form-field:invalid {
+  border-color:#EA5454;
+  background-color: #FFFFFF;
+  color: #2D3440;
+}
+
+.form-field:invalid:placeholder-shown {
+  border: 1px solid #B9B9B9;
+}
+
+.form-field:hover:invalid:not(:placeholder-shown) {
+  padding-left: 15px;
+  border: 2px solid #EA5454;
+}
+
 .social-link {
   display: block;
   width: 24px;
@@ -416,29 +541,116 @@ body {
 
  .ice-cream-slider {
   width: 1170px;
-  margin-bottom: 80px;
+  margin-bottom: 82px;
   display: flex;
+  flex-wrap: wrap;
  }
 
- .ice-cream-slider-list {
-  list-style: none;
-}
+ .slider-left-side-container {
+  box-sizing: border-box;
+  width: 540px;
+  padding-top: 136px;
+  padding-left: 70px;
+  padding-right: 41px;
+ }
 
-.ice-cream-slider-item {
+ .slider-right-side-container {
+  box-sizing: border-box;
+  position: relative;
+  width: 352px;
+  height: 528px;
+  padding-top: 21px;
+  padding-right: 0;
+ }
+
+ .slider-back-image-container {
+  box-sizing: border-box;
+  position: relative;
+  opacity: 0.4;
+  flex-grow: 0;
+  padding: 0;
+  width: 100px;
+  height: 150px;
+  margin-top: 206px;
+  margin-left: 33px;
+ }
+
+ .slider-back-image-container + .slider-back-image-container {
+  margin-left: 40px;
+ }
+
+ .slider-back-image-container::before {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  display: block;
+  background-color: #FFCBD8;
+  width: 100px;
+  height: 100px;
+  top: 16%;
+  left: 6%;
+  border-radius: 200px;
+ }
+
+ .slider-controls {
+  position: absolute;
+  top: 52.5%;
+  width: 100%;
+  transform: translateY(-50%);
   display: flex;
+  justify-content: space-between;
+  padding-left: 1px;
+ }
+
+ .slider-image {
+  position: relative;
+  display: block;
+  margin-left: 21px;
+  z-index: 1;
+ }
+
+ .slider-back-image {
+  position: relative;
+  display: block;
+  z-index: 1;
+  margin-left: 11px;
+ }
+
+ .slider-right-side-container::before {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  display: block;
+  background-color: #FFCBD8;
+  width: 312px;
+  height: 312px;
+  top: 23%;
+  left: 6%;
+  border-radius: 200px;
+ }
+
+.bottom-slider-container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
-.ice-cream-slider-item-name {
+ .ice-cream-slider-item-name {
+  margin: 0;
+  margin-bottom: 24px;
+  padding: 0;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 36px;
   line-height: 46px;
   color: #2D3440;
-  max-width: 470px;
 }
 
 .ice-cream-slider-item-description {
+  margin: 0;
+  margin-bottom: 48px;
+  padding: 0;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -448,8 +660,68 @@ body {
   max-width: 470px;
 }
 
+.ice-cream-slider-pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ .ice-cream-slider-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ice-cream-slider-item {
+  display: flex;
+  justify-content:flex-start;
+}
+
+.ice-cream-slider-pagination {
+  max-width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.ice-cream-slider-pagination-button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border-radius: 100px;
+  background-color: rgb(252, 252, 252, 0.3);
+  outline: none;
+}
+
+.ice-cream-slider-pagination-current {
+  background-color: #FCFCFC;
+}
+
+.ice-cream-slider-pagination-button:hover {
+  border: 1px solid #FCFCFC;
+}
+
+.ice-cream-slider-pagination-button:focus {
+  border: 1px solid #2D3440;
+}
+
+.ice-cream-slider-pagination-button:active {
+  background-color: rgb(252, 252, 252, 0.5);
+}
+
 .ice-cream-slider-social-list {
   list-style: none;
+  max-width: 40%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
 }
 
 .gifts {
@@ -730,6 +1002,7 @@ body {
   line-height: 20px;
   color: #565C66;
   margin: 0;
+  margin-top: 2px;
   margin-bottom: 12px;
 }
 
@@ -771,10 +1044,9 @@ body {
   align-items: center;
 }
 
-/*
-I decided to make flexible text in delivery-order section and not solid margin.
-It's not like in layout, but fells better.
-*/
+.newsletter-email {
+  width: 312px;
+}
 
 .delivery-order {
   background-image: url("../img/ice-cream-and-fruits-on-a-desk.jpg");
