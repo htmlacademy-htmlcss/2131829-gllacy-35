@@ -283,14 +283,17 @@
             <p class="delivery-order-description">Хочется полакомиться любимым десертом, <br>но нет времени съездить в магазин? Закажите доставку мороженого на дом, и курьер привезёт вам ваш заказ в течение часа!</p>
           </div>
           <form class="delivery-order-form" action="https://echo.htmlacademy.ru/" method="post">
-            <label>Дата
-              <input type="text" name="delivery-order-form-date" placeholder="01.04.2020">
-            </label>
-            <label>Телефон
-              <input type="text" name="delivery-order-form-phone" placeholder="+7 800 999-00-00">
-            </label>
-            <label>Адрес
-              <input type="text" name="delivery-order-form-address" placeholder="ул. Большая Конюшенная, 19/8">
+            <p class="delivery-order-description delivery-order-info">Укажите адрес и дату доставки, и мы свяжемся<br>с вами, чтобы подтвердить заказ.</p>
+            <div class="delivery-date-phone-container">
+              <label class="delivery-date-label">Дата
+                <input class="form-field delivery-date" type="text" name="delivery-order-form-date" placeholder="01.04.2020" required>
+              </label>
+              <label class="delivery-phone-label">Телефон
+                <input class="form-field delivery-phone" type="text" name="delivery-order-form-phone" placeholder="+7 800 999-00-00" required>
+              </label>
+            </div>
+            <label class="delivery-address-label">Адрес
+              <input class="form-field delivery-address" type="text" name="delivery-order-form-address" placeholder="ул. Большая Конюшенная, 19/8" required>
             </label>
             <button class="button button-action" type="submit">Отправить</button>
           </form>
