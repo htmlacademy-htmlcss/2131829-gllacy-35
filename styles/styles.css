@@ -1109,6 +1109,7 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+  color: #2D3440;
   display: flex;
   flex-direction: column;
  }
@@ -1148,6 +1149,55 @@ body {
   width: 152px;
   align-self: center;
 }
+
+.tooltip-toggle {
+  position: relative;
+  background: none;
+  border: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 14px;
+  height: 14px;
+}
+
+.tooltip-icon:hover +  .tooltip-text {
+  display: block;
+}
+
+.tooltip-text {
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #565C66;
+  margin: 0;
+  padding: 10px 8px;
+  width: 169px;
+  left: 23px;
+  top: -9px;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9B9;
+  border-radius: 1px;
+  box-shadow: 0 4px 8px rgba(194, 194, 194, 0.2);
+  text-align: start;
+  display: none;
+}
+
+.tooltip-text::before {
+  position: absolute;
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #B9B9B9;
+  border-left: 1px solid #B9B9B9;
+  transform: rotate(45deg);
+  left: -4.7px;
+}
+
 
  /* .delivery-order-form {
   margin: 0;
