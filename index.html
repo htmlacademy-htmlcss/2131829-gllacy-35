@@ -399,7 +399,7 @@
           <form class="delivery-order-form" action="https://echo.htmlacademy.ru/" method="post">
             <p class="delivery-order-description delivery-order-info">Укажите адрес и дату доставки, и мы свяжемся<br>с вами, чтобы подтвердить заказ.</p>
             <div class="delivery-date-phone-container">
-              <label class="delivery-date-label">
+              <div class="delivery-date-container">
                 <span>Дата
                   <button class="tooltip-toggle">
                     <svg class="tooltip-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -408,13 +408,15 @@
                     <span class="tooltip-text">Укажите желаемую дату доставки</span>
                   </button>
                 </span>
-                <input class="form-field delivery-date" type="text" name="delivery-order-form-date" placeholder="01.04.2020" required>
-              </label>
+                <label class="delivery-date-label">
+                  <input class="form-field delivery-date" type="text" name="delivery-order-form-date" placeholder="01.04.2020" required>
+                </label>
+              </div>
               <label class="delivery-phone-label">Телефон
                 <input class="form-field delivery-phone" type="text" name="delivery-order-form-phone" placeholder="+7 800 999-00-00" required>
               </label>
             </div>
-            <label class="delivery-address-label">
+            <div class="delivery-address-container">
               <span>Адрес
                 <button class="tooltip-toggle">
                   <svg class="tooltip-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -423,8 +425,10 @@
                   <span class="tooltip-text">Укажите адрес доставки</span>
                 </button>
               </span>
-              <input class="form-field delivery-address" type="text" name="delivery-order-form-address" placeholder="ул. Большая Конюшенная, 19/8" required>
-            </label>
+              <label class="delivery-address-label">
+                <input class="form-field delivery-address" type="text" name="delivery-order-form-address" placeholder="ул. Большая Конюшенная, 19/8" required>
+              </label>
+            </div>
             <button class="button button-action" type="submit">Отправить</button>
           </form>
         </section>
