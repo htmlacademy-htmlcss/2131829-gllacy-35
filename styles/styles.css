@@ -22,6 +22,11 @@
   font-display: swap;
 }
 
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -792,14 +797,12 @@ body {
 .gifts-item:nth-child(1) {
   background-image: url("../img/promo-raspberry.png");
   background-position: 359px 26px;
-  /*96%*/
   background-size: 34.5%;
 }
 
 .gifts-item:nth-child(2) {
   background-image: url("../img/promo-marshmallow.png");
   background-position: 355px 26px;
-  /*96%*/
   background-size: 40%;
 }
 
@@ -1008,6 +1011,7 @@ body {
 }
 
 .news {
+  background-color: #ffffff;
   background-image: url("../img/three-round-ice-creams.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -1041,6 +1045,7 @@ body {
 }
 
 .newsletter {
+  background-color: #ffffff;
   background-image: url("../img/white-space-with-linear-border.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -1073,6 +1078,7 @@ body {
 }
 
 .delivery-order {
+  background-color: #ffffff;
   background-image: url("../img/ice-cream-and-fruits-on-a-desk.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -1102,7 +1108,6 @@ body {
   color: #2d3440;
   margin: 0;
   margin-top: 3px;
-  /*empirically*/
   margin-bottom: 24px;
 }
 
@@ -1247,63 +1252,8 @@ body {
   left: -4.7px;
 }
 
-
-/* .delivery-order-form {
-  margin: 0;
-  padding: 40px;
-  display: grid;
-  grid-template-columns: 117px 287px;
-  grid-gap: 16px;
-  box-sizing: border-box;
-  background-color: #fcfcfc;
-  box-shadow: 0 15px 40px rgba(45, 52, 64, 0.12);
-  width: 500px;
- }
-
- .delivery-order-form label {
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
- }
-
- .delivery-order-form input {
-  margin-top: 8px;
- }
-
- .delivery-order-info {
-  grid-column: 1/-1;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 10px;
- }
-
-.delivery-date {
-  width: 117px;
-}
-
-.delivery-phone {
-  width: 287px;
-}
-
-.delivery-address {
-  grid-column: 1/-1;
-  width: 420px;
-}
-
-.delivery-address-label {
-  margin-top: -5px;
-}
-
-.delivery-order-form .button-action {
-  grid-row: 4;
-  grid-column: -2;
-  width: 152px;
-  margin-top: 100px;
-} */
-
 .contacts {
+  background-color: #ffffff;
   background-image: url("../img/three-ice-creams-in-holder.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -1409,7 +1359,6 @@ body {
   display: grid;
   max-width: 356px;
   grid-template-columns: minmax(max-content, 50%) minmax(max-content, 50%);
-  /* grid-template-rows: repeat(auto-fill, max-content); */
   row-gap: 7px;
   column-gap: 24px;
 }
@@ -1504,8 +1453,6 @@ body {
 .breadcrumbs-item::after {
   position: absolute;
   content: "";
-  /* top: 25%;
-  right: -65%; */
   top: 5px;
   right: -35px;
   width: 28px;
@@ -1632,7 +1579,6 @@ body {
   position: absolute;
   height: 2px;
   background-color: #565c66;
-  /*Same color "rgba(86, 92, 102, 0.3)" as range-scale but no opacity */
 }
 
 .range-toggle {
@@ -1742,7 +1688,15 @@ body {
   border-color: #fcfcfc;
 }
 
+.fat-level:focus-within .control-mark-radio {
+  border-color: #fcfcfc;
+}
+
 .fat-level-input[type="radio"]:checked:hover + .control-mark-radio::before {
+  background-color: #fcfcfc;
+}
+
+.fat-level-input[type="radio"]:checked:focus-within + .control-mark-radio::before {
   background-color: #fcfcfc;
 }
 
@@ -1799,7 +1753,15 @@ body {
   background-image: url("../img/checkbox-mark-white.svg");
 }
 
+.filter-fillers:focus-within .control-mark-checkbox {
+  background-image: url("../img/checkbox-mark-white.svg");
+}
+
 .filter-fillers-input[type="checkbox"]:checked:hover + .control-mark-checkbox {
+  background-image: url("../img/checkbox-mark-checked-white.svg");
+}
+
+.filter-fillers-input[type="checkbox"]:checked:focus + .control-mark-checkbox {
   background-image: url("../img/checkbox-mark-checked-white.svg");
 }
 
