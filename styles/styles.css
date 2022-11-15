@@ -469,14 +469,6 @@ body {
   background-color: #fcfcfc;
 }
 
-.catalog-item:focus-within .popover-catalog {
-  display: block;
-}
-
-.catalog-item:focus-within .catalog:not(.popover-close-button) {
-  opacity: 0;
-}
-
 .navigation-user-list {
   list-style: none;
   margin: 0;
@@ -2236,7 +2228,7 @@ body {
 }
 
 .popover-catalog {
-  display: none;
+  display: block;
   top: 44.14px;
   right: unset;
   left: 0;
@@ -2245,6 +2237,10 @@ body {
   padding-top: 10px;
   padding-bottom: 8px;
   max-width: 422px;
+}
+
+.popover-catalog-close {
+  display: none;
 }
 
 .popover-catalog .popover-close-button {
