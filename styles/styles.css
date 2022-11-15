@@ -469,6 +469,14 @@ body {
   background-color: #fcfcfc;
 }
 
+.catalog-item:focus-within .popover-catalog {
+  display: block;
+}
+
+.catalog-item:focus-within .catalog:not(.popover-close-button) {
+  opacity: 0;
+}
+
 .navigation-user-list {
   list-style: none;
   margin: 0;
