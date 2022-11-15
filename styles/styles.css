@@ -455,6 +455,11 @@ body {
   background-position: right 15px center;
 }
 
+.catalog.popover-close-button {
+  background-position: right 15px bottom 8px;
+  background-image: url("../img/catalog-arrow-up-white.svg");
+}
+
 .navigation-link:hover {
   background-color: rgba(252, 252, 252, 0.5);
 }
@@ -547,6 +552,11 @@ body {
   bottom: 0;
   left: 0;
   margin: auto;
+  fill: #2d3440;
+}
+
+.popover-close-button .navigation-user-icon {
+  fill: #fcfcfc;
 }
 
 .navigation-user-link:hover {
@@ -1554,6 +1564,7 @@ body {
   padding: 8px 60px 8px 16px;
   font: inherit;
   color: inherit;
+  -webkit-appearance: none;
   appearance: none;
   background-image: url("../img/select-arrow-down.svg");
   background-repeat: no-repeat;
@@ -1636,11 +1647,13 @@ body {
   text-align: center;
   background-color: transparent;
   border: none;
+  -webkit-appearance: textfield;
   appearance: textfield;
 }
 
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   appearance: none;
   margin: 0;
 }
@@ -1952,7 +1965,7 @@ body {
 /*Other*/
 
 .popover {
-  display: none;
+  display: block;
   position: absolute;
   top: 40.14px;
   right: 0;
@@ -1972,10 +1985,11 @@ body {
   min-height: 156px;
 }
 
+.popover-cart-close {
+  display: none;
+}
+
 .popover-close-button {
-  position: absolute;
-  top: -40.14px;
-  right: 0;
   border: none;
   color: #fcfcfc;
   background-color: #ff4a78;
@@ -1995,7 +2009,7 @@ body {
   opacity: 0.3;
 }
 
-.popover-cart .popover-close-button {
+.cart.popover-close-button {
   background-image: url("../img/cart-icon-white.svg");
   background-repeat: no-repeat;
   background-position: left 15px bottom 8px;
@@ -2134,11 +2148,15 @@ body {
 }
 
 .popover-log-in {
-  display: none;
+  display: block;
   width: 420px;
 }
 
-.popover-log-in .popover-close-button {
+.popover-log-in-close {
+  display: none;
+}
+
+.log-in.popover-close-button {
   background-image: url("../img/log-in-icon-white.svg");
   background-repeat: no-repeat;
   background-position: left 15px bottom 8px;
@@ -2197,12 +2215,16 @@ body {
 }
 
 .popover-search {
-  display: none;
+  display: block;
   box-sizing: border-box;
   width: 356px;
   height: 96px;
   padding: 24px 16px;
   min-height: unset;
+}
+
+.popover-search-close {
+  display: none;
 }
 
 .search-form-field {
@@ -2241,20 +2263,6 @@ body {
 
 .popover-catalog-close {
   display: none;
-}
-
-.popover-catalog .popover-close-button {
-  top: -44.14px;
-  right: unset;
-  left: 0;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: #fcfcfc;
-  background-image: url("../img/catalog-arrow-up-white.svg");
-  background-position: right 15px bottom 8px;
 }
 
 .navigation-link.popover-close-button:hover {

@@ -12,16 +12,13 @@
       <nav class="navigation">
         <ul class="navigation-list">
           <li class="navigation-item">
-            <a class="navigation-link-logo" href="index.html"><img class="logo-icon" src="img/logo.svg" width="137"
-                height="56" alt="Логотип."></a>
+            <a class="navigation-link-logo" href="index.html">
+              <img class="logo-icon" src="img/logo.svg" width="137" height="56" alt="Логотип.">
+            </a>
           </li>
           <li class="navigation-item catalog-item">
             <a class="navigation-link catalog" href="#">Каталог</a>
             <div class="popover popover-catalog popover-catalog-close">
-              <button class="popover-close-button navigation-link catalog" type="button">
-                Каталог
-                <span class="visually-hidden">Закрыть.</span>
-              </button>
               <div class="popover-content">
                 <h2 class="visually-hidden">Каталог.</h2>
                 <ul class="popover-catalog-links-list">
@@ -57,13 +54,13 @@
           </li>
           <li class="navigation-user-item">
             <a class="navigation-user-link search" href="#">
-              <img class="navigation-user-icon" src="img/search-icon-black.svg" width="16" height="16" alt="Поиск.">
+              <svg class="navigation-user-icon" role="img" aria-label="Поиск." width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M2.66 7.33a4.67 4.67 0 1 1 9.34 0 4.67 4.67 0 0 1-9.34 0Zm8.42 4.69a6 6 0 1 1 .94-.94l2.45 2.45a.67.67 0 1 1-.94.94l-2.45-2.45Z" />
+              </svg>
             </a>
-            <div class="popover popover-search">
-              <button class="popover-close-button navigation-user-link search" type="button">
-                <img class="navigation-user-icon" src="img/search-icon-white.svg" width="16" height="16" alt="">
-                <span class="visually-hidden">Закрыть.</span>
-              </button>
+            <div class="popover popover-search popover-search-close">
               <div class="popover-content">
                 <h2 class="visually-hidden">Поиск.</h2>
                 <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -79,11 +76,7 @@
           </li>
           <li class="navigation-user-item">
             <a class="navigation-user-link log-in" href="#">Вход</a>
-            <div class="popover popover-log-in">
-              <button class="popover-close-button navigation-user-link" type="button">
-                Вход
-                <span class="visually-hidden">Закрыть.</span>
-              </button>
+            <div class="popover popover-log-in popover-log-in-close">
               <div class="popover-content">
                 <h2 class="popover-title">Личный кабинет</h2>
                 <form class="log-in-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -114,11 +107,7 @@
           </li>
           <li class="navigation-user-item">
             <a class="navigation-user-link cart" href="#">2 товара</a>
-            <div class="popover popover-cart">
-              <button class="popover-close-button navigation-user-link" type="button">
-                2 товара
-                <span class="visually-hidden">Закрыть.</span>
-              </button>
+            <div class="popover popover-cart popover-cart-close">
               <div class="popover-content">
                 <h2 class="popover-title">Корзина</h2>
                 <ul class="cart-items-list">
