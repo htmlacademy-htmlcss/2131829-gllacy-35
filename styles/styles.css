@@ -43,7 +43,7 @@ html {
 }
 
 body {
-  min-width: 1170px;
+  min-width: 1366px;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -51,8 +51,20 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 22px;
-  background-color: #feafc3;
   color: #565c66;
+  background-color: #feafc3;
+}
+
+.body-strawberry {
+  background-color: #feafc3;
+}
+
+.body-banana {
+  background-color: #69a9ff;
+}
+
+.body-caramel {
+  background-color: #fcc850;
 }
 
 .page-header {
@@ -293,8 +305,9 @@ body {
   font-size: 16px;
   line-height: 20px;
   color: #2d3440;
-  background-color: #ffffff;
-  border: 1px solid #b9b9b9;
+  border: none;
+  outline: 1px solid #b9b9b9;
+  outline-offset: -1px;
   border-radius: 4px;
   height: 48px;
   padding: 0;
@@ -302,64 +315,49 @@ body {
 }
 
 .form-field::placeholder {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
   color: #b9b9b9;
+  opacity: 1;
 }
 
 .form-field:hover {
-  border-color: #2d3440;
+  outline-color: #2d3440;
 }
 
 .form-field:focus {
-  border: 2px solid #2d3440;
-}
-
-.form-field:focus:not(:placeholder-shown) {
-  padding-left: 15px;
-  border: 2px solid #2d3440;
+  outline-offset: -2px;
+  outline: 2px solid #2d3440;
 }
 
 .form-field:disabled {
-  color: #2d3440;
-  background-color: #e7e7e7;
-  border-color: #b9b9b9;
-}
-
-.form-field:disabled::placeholder {
+  /*placeholder is not defined specifically for disabled input in layout, so i decided not to change it*/
   color: rgba(45, 52, 64, 0.65);
+  background-color: #e7e7e7;
+  outline-color: #b9b9b9;
 }
 
 .form-field:disabled:hover {
   color: #2d3440;
-  background-color: #e7e7e7;
-  border-color: #b9b9b9;
 }
 
-.form-field:disabled:hover::placeholder {
-  color: rgba(45, 52, 64, 1);
-}
-
-.form-field:invalid {
-  border-color: #ea5454;
+.form-field:not(:placeholder-shown):invalid {
+  outline-color: #ea5454;
   background-color: #ffffff;
   color: #2d3440;
 }
 
-.form-field:invalid:placeholder-shown {
-  border: 1px solid #b9b9b9;
+.form-field:not(:placeholder-shown):invalid:hover {
+  outline-offset: -2px;
+  outline: 2px solid #ea5454;
 }
 
-.form-field:invalid:not(:placeholder-shown) {
-  padding-left: 16px;
-  border: 1px solid #b9b9b9;
-}
-
-.form-field:hover:invalid:placeholder-shown {
-  border-color: #2d3440;
-}
-
-.form-field:hover:invalid:not(:placeholder-shown) {
-  padding-left: 15px;
-  border: 2px solid #ea5454;
+.form-field:not(:placeholder-shown):invalid:focus {
+  outline-offset: -2px;
+  outline: 2px solid #2d3440;
 }
 
 .social-link {
@@ -578,6 +576,7 @@ body {
   margin-bottom: 82px;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .ice-cream-slider-item:not(.ice-cream-slider-item-current) {
@@ -589,7 +588,7 @@ body {
   width: 540px;
   padding-top: 136px;
   padding-left: 70px;
-  padding-right: 41px;
+  padding-right: 38px;
 }
 
 .slider-right-side-container {
@@ -622,7 +621,6 @@ body {
   z-index: 0;
   content: "";
   display: block;
-  background-color: #ffcbd8;
   width: 100px;
   height: 100px;
   top: 16%;
@@ -630,21 +628,31 @@ body {
   border-radius: 200px;
 }
 
+.slider-back-image-container.strawberry::before {
+  background-color: #ffcbd8;
+}
+
+.slider-back-image-container.banana::before {
+  background-color: #9fc8ff;
+}
+
+.slider-back-image-container.caramel::before {
+  background-color: #fcdc92;
+}
+
 .slider-controls {
   position: absolute;
-  top: 52.5%;
-  width: 100%;
+  top: 277px;
+  left: 542px;
   transform: translateY(-50%);
   display: flex;
-  justify-content: space-between;
-  padding-left: 1px;
+  gap: 272px;
 }
 
 .slider-image {
   position: relative;
   display: block;
   margin-left: 21px;
-  z-index: 1;
 }
 
 .slider-back-image {
@@ -659,12 +667,23 @@ body {
   z-index: 0;
   content: "";
   display: block;
-  background-color: #ffcbd8;
   width: 312px;
   height: 312px;
   top: 23%;
   left: 6%;
   border-radius: 200px;
+}
+
+.slider-right-side-container.strawberry::before {
+  background-color: #ffcbd8;
+}
+
+.slider-right-side-container.banana::before {
+  background-color: #9fc8ff;
+}
+
+.slider-right-side-container.caramel::before {
+  background-color: #fcdc92;
 }
 
 .bottom-slider-container {
@@ -798,7 +817,7 @@ body {
   min-height: 268px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   padding: 36px;
   background-repeat: no-repeat;
@@ -883,7 +902,7 @@ body {
   margin-top: 51px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding-right: 40px;
   padding-left: 40px;
   padding-top: 133px;
@@ -1057,7 +1076,7 @@ body {
 .newsletter {
   background-color: #ffffff;
   background-image: url("../img/white-space-with-linear-border.jpg");
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 570px;
   border-radius: 16px;
@@ -1074,7 +1093,7 @@ body {
   color: #565c66;
   max-width: 506px;
   margin: 0;
-  margin-bottom: 43px;
+  margin-bottom: 44px;
 }
 
 .newsletter-form {
@@ -1088,7 +1107,7 @@ body {
 }
 
 .delivery-order {
-  background-color: #ffffff;
+  background-color: #f3f2f2;
   background-image: url("../img/ice-cream-and-fruits-on-a-desk.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -1101,6 +1120,7 @@ body {
   display: flex;
   column-gap: 130px;
   margin-bottom: 80px;
+  background-position: center;
 }
 
 .delivery-proposal-container {
@@ -1197,7 +1217,6 @@ body {
 
 .delivery-date {
   width: 117px;
-  flex-grow: -1;
 }
 
 .delivery-phone {
@@ -1263,7 +1282,7 @@ body {
 }
 
 .contacts {
-  background-color: #ffffff;
+  background-color: #f2c8c7;
   background-image: url("../img/three-ice-creams-in-holder.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -1274,6 +1293,7 @@ body {
   display: flex;
   justify-content: start;
   box-sizing: border-box;
+  background-position: center;
 }
 
 .contacts-container {
@@ -1405,7 +1425,6 @@ body {
 }
 
 .made-in {
-  margin-top: auto;
   margin-bottom: auto;
   margin-left: auto;
   margin-right: 14px;
@@ -1569,6 +1588,7 @@ body {
   background-image: url("../img/select-arrow-down.svg");
   background-repeat: no-repeat;
   background-position: right 15px top 16px;
+  cursor: pointer;
 }
 
 .filter-submit {
@@ -1673,56 +1693,42 @@ body {
   position: relative;
   display: block;
   padding-left: 24px;
+  cursor: pointer;
 }
 
 .control-mark-radio {
   position: absolute;
-  box-sizing: border-box;
   top: 2px;
   left: 0;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
-  border: 1.3px solid #2d3440;
+  background-image: url("../img/radio-button-black.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.fat-level-input[type="radio"]:checked + .control-mark-radio::before {
-  position: absolute;
-  content: "";
-  top: 3.7px;
-  left: 3.7px;
-  width: 6px;
-  height: 6px;
-  background-color: #2d3440;
-  border-radius: 50%;
+.fat-level-input[type="radio"]:checked + .control-mark-radio {
+  background-image: url("../img/radio-button-checked-black.svg");
 }
 
 .fat-level:hover .control-mark-radio {
-  border-color: #fcfcfc;
+  background-image: url("../img/radio-button-white.svg");
 }
 
-.fat-level:focus-within .control-mark-radio {
-  border-color: #fcfcfc;
+.fat-level-input[type="radio"]:checked:hover + .control-mark-radio {
+  background-image: url("../img/radio-button-checked-white.svg");
 }
 
-.fat-level-input[type="radio"]:checked:hover + .control-mark-radio::before {
-  background-color: #fcfcfc;
+.fat-level-input[type="radio"]:checked:focus-within + .control-mark-radio {
+  background-image: url("../img/radio-button-checked-white.svg");
 }
 
-.fat-level-input[type="radio"]:checked:focus-within + .control-mark-radio::before {
-  background-color: #fcfcfc;
+.fat-level-input[type="radio"]:disabled + .control-mark-radio {
+  background-image: url("../img/radio-button-smooth.svg");
 }
 
-.fat-level-input:disabled + .control-mark-radio {
-  border-color: rgba(45, 52, 64, 0.4);
-}
-
-.fat-level-input:disabled:checked + .control-mark-radio::before {
-  background-color: rgba(45, 52, 64, 0.4);
-}
-
-.fat-level-input:disabled:checked:hover + .control-mark-radio::before {
-  background-color: rgba(45, 52, 64, 0.4);
+.fat-level-input[type="radio"]:checked:disabled + .control-mark-radio {
+  background-image: url("../img/radio-button-checked-smooth.svg");
 }
 
 .filter-fillers-submit-container {
@@ -1746,6 +1752,7 @@ body {
   position: relative;
   display: block;
   padding-left: 24px;
+  cursor: pointer;
 }
 
 .control-mark-checkbox {
@@ -2106,13 +2113,14 @@ body {
 .cart-item-button {
   display: block;
   margin: 0;
-  padding: 3px;
+  padding: 5px;
   border: none;
   background: none;
-}
-
-.cart-item-button img {
-  display: block;
+  background-image: url("../img/cross-black.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
 }
 
 .cart-buy-summary-container {
@@ -2140,7 +2148,6 @@ body {
 }
 
 .popover-cart.empty {
-  display: none;
   width: 288px;
   margin: 0;
   padding: 48px 0 16px 0;
@@ -2210,10 +2217,6 @@ body {
   border-bottom: 1px solid #2d3440;
 }
 
-.log-in-form-field:focus:not(:placeholder-shown) {
-  padding-left: 14px;
-}
-
 .popover-search {
   display: block;
   box-sizing: border-box;
@@ -2225,6 +2228,10 @@ body {
 
 .popover-search-close {
   display: none;
+}
+
+.search-form {
+  position: relative;
 }
 
 .search-form-field {
@@ -2242,11 +2249,32 @@ body {
   height: 48px;
   padding: 0;
   padding-left: 16px;
+  padding-right: 32px;
   outline: none;
 }
 
 .search-form-field::placeholder {
   color: #b9b9b9;
+}
+
+.search-reset-button {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 14px;
+  margin: 0;
+  padding: 8px;
+  border: none;
+  background: none;
+  background-image: url("../img/cross-smooth.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.search-form-field:not(:placeholder-shown) + .search-reset-button {
+  display: block;
 }
 
 .popover-catalog {
@@ -2407,14 +2435,6 @@ body {
   margin-bottom: 26px;
   padding: 14px 16px;
   resize: none;
-}
-
-.feedback-form-field[name="feedback-message"]:not(:placeholder-shown):hover:focus {
-  padding-top: 13px;
-}
-
-.feedback-form-field[name="feedback-message"]:not(:placeholder-shown):focus {
-  padding-top: 13px;
 }
 
 .feedback-form-button {
