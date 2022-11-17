@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Каталог</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
   </head>
 
   <body>
@@ -20,7 +21,7 @@
             <a class="navigation-link catalog" href="#">Каталог</a>
             <div class="popover popover-catalog popover-catalog-close">
               <div class="popover-content">
-                <h2 class="visually-hidden">Каталог.</h2>
+                <p class="visually-hidden">Каталог.</p>
                 <ul class="popover-catalog-links-list">
                   <li class="popover-catalog-links-item">
                     <a class="popover-catalog-link" href="#">Новинки</a>
@@ -62,13 +63,15 @@
             </a>
             <div class="popover popover-search popover-search-close">
               <div class="popover-content">
-                <h2 class="visually-hidden">Поиск.</h2>
+                <p class="visually-hidden">Поиск.</p>
                 <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
-                  <label class="search-form-label">
+                  <label class="search-form-label" for="search-request">
                     <span class="visually-hidden">Поисковый запрос.</span>
-                    <input class="search-form-field" type="text" name="search-request" placeholder="Поиск по сайту"
-                      id="search-request" required>
                   </label>
+                  <input class="search-form-field" type="text" name="search-request" placeholder="Поиск по сайту" id="search-request" required>
+                  <button class="search-reset-button" type="reset">
+                    <span class="visually-hidden">Очистить поиск.</span>
+                  </button>
                   <button class="visually-hidden" type="submit">Найти.</button>
                 </form>
               </div>
@@ -78,7 +81,7 @@
             <a class="navigation-user-link log-in" href="#">Вход</a>
             <div class="popover popover-log-in popover-log-in-close">
               <div class="popover-content">
-                <h2 class="popover-title">Личный кабинет</h2>
+                <p class="popover-title">Личный кабинет</p>
                 <form class="log-in-form" action="https://echo.htmlacademy.ru/" method="post">
                   <label class="log-in-form-label">
                     <span class="visually-hidden">Email.</span>
@@ -109,7 +112,7 @@
             <a class="navigation-user-link cart" href="#">2 товара</a>
             <div class="popover popover-cart popover-cart-close">
               <div class="popover-content">
-                <h2 class="popover-title">Корзина</h2>
+                <p class="popover-title">Корзина</p>
                 <ul class="cart-items-list">
                   <li class="cart-item">
                     <div class="cart-item-title-description-container">
@@ -118,7 +121,6 @@
                     </div>
                     <p class="cart-item-price">310 ₽</p>
                     <button class="cart-item-button" type="button">
-                      <img src="img/cross-black.svg" width="10" height="10" alt="">
                       <span class="visually-hidden">Удалить из корзины.</span>
                     </button>
                   </li>
@@ -129,7 +131,6 @@
                     </div>
                     <p class="cart-item-price">480 ₽</p>
                     <button class="cart-item-button" type="button">
-                      <img src="img/cross-black.svg" width="10" height="10" alt="">
                       <span class="visually-hidden">Удалить из корзины.</span>
                     </button>
                   </li>
@@ -140,11 +141,7 @@
                 </div>
               </div>
             </div>
-            <div class="popover popover-cart empty">
-              <button class="popover-close-button navigation-user-link" type="button">
-                2 товара
-                <span class="visually-hidden">Закрыть.</span>
-              </button>
+            <div class="popover popover-cart empty popover-cart-close">
               <div class="popover-content">
                 <p class="popover-title">Ваша корзина пока пуста</p>
               </div>
@@ -291,7 +288,7 @@
           <ul class="product-list">
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/raspberry-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/raspberry-ice-cream-round.png" width="168" height="168" alt="Шарик текстурного красного мороженого.">
                 <h3 class="product-card-title">Малинка</h3>
                 <p class="product-card-description">Сливочное мороженое с малиновым джемом</p>
               </a>
@@ -307,7 +304,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/pistachio-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/pistachio-ice-cream-round.png" width="168" height="168" alt="Светло-зеленый шарик мороженого с несколькими кусочками шоколада.">
                 <h3 class="product-card-title">Фисташка</h3>
                 <p class="product-card-description">Фисташковый пломбир с кусочками шоколада</p>
               </a>
@@ -323,7 +320,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/blackberry-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/blueberry-ice-cream-round.png" width="168" height="168" alt="Шарик бежевого мороженого с прожилками черничного джема.">
                 <h3 class="product-card-title">Черника</h3>
                 <p class="product-card-description">Крем-брюле<br>с черничным джемом</p>
               </a>
@@ -339,7 +336,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/bubble-gum-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/bubble-gum-ice-cream-round.png" width="168" height="168" alt="Голубой шар мороженого посыпанный разноцветными шариками.">
                 <h3 class="product-card-title">Бабл-гам</h3>
                 <p class="product-card-description">Ванильный пломбир<br>со сладкой посыпкой</p>
               </a>
@@ -355,7 +352,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/blueberry-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/blackberry-ice-cream-round.png" width="168" height="168" alt="Бледно-розовый шар мороженого с проступающими на поверхности кусочками ежевики.">
                 <h3 class="product-card-title">Ежевика</h3>
                 <p class="product-card-description">Сливочное мороженое с ежевичным джемом</p>
               </a>
@@ -371,7 +368,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/banana-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/banana-ice-cream-round.png" width="168" height="168" alt="Шар светло-желтого цвета.">
                 <h3 class="product-card-title">Банан</h3>
                 <p class="product-card-description">Сливочный пломбир<br>с банановым вкусом</p>
               </a>
@@ -387,7 +384,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/choko-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/choko-ice-cream-round.png" width="168" height="168" alt="Шарик мороженого светло-коричневого цвета.">
                 <h3 class="product-card-title">Шоколадка</h3>
                 <p class="product-card-description">Классический шоколадный пломбир</p>
               </a>
@@ -403,7 +400,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/strawberry-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/strawberry-ice-cream-round.png" width="168" height="168" alt="Розовый шарик мороженого.">
                 <h3 class="product-card-title">Клубничка</h3>
                 <p class="product-card-description">Сливочный пломбир<br>с клубничным вкусом</p>
               </a>
@@ -419,7 +416,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/lemon-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/lemon-ice-cream-round.png" width="168" height="168" alt="Ярко-желтый шар мороженого.">
                 <h3 class="product-card-title">Лимон</h3>
                 <p class="product-card-description">Освежающий лимонный сорбет</p>
               </a>
@@ -435,7 +432,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/menthol-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/menthol-ice-cream-round.png" width="168" height="168" alt="Шарообразное голубое мороженое.">
                 <h3 class="product-card-title">Ментол</h3>
                 <p class="product-card-description">Сливочный пломбир<br>с ментоловым сиропом</p>
               </a>
@@ -451,7 +448,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/nut-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/nut-ice-cream-round.png" width="168" height="168" alt="Светло-зеленое мороженое, политое коричневым сиропом.">
                 <h3 class="product-card-title">Орешек</h3>
                 <p class="product-card-description">Фисташковый пломбир с шоколадным сиропом</p>
               </a>
@@ -467,7 +464,7 @@
             </li>
             <li class="product-card">
               <a class="product-card-link" href="product.html">
-                <img class="product-card-image" src="img/creme-brulee-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="product-card-image" src="img/creme-brulee-ice-cream-round.png" width="168" height="168" alt="Игольчатый шарик бежевого мороженого с коричневыми областями.">
                 <h3 class="product-card-title">Крем-брюле</h3>
                 <p class="product-card-description">Классическое<br>крем-брюле</p>
               </a>
@@ -595,7 +592,7 @@
           <a class="made-in-link" href="https://htmlacademy.ru/">
             <img class="logo" src="img/logo_htmlacademy.svg" width="93" height="27" alt="Логотип Академии HTML.">
           </a>
-          <p class="made-in-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a>© 2021</p>
+          <p class="made-in-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a> © 2021</p>
         </section>
       </div>
     </footer>

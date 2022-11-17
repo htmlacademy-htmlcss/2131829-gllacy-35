@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
   </head>
 
-  <body>
+  <body class="body-strawberry">
     <header class="page-header">
       <nav class="navigation">
         <ul class="navigation-list">
@@ -20,7 +21,7 @@
             <a class="navigation-link catalog" href="#">Каталог</a>
             <div class="popover popover-catalog popover-catalog-close">
               <div class="popover-content">
-                <h2 class="visually-hidden">Каталог.</h2>
+                <p class="visually-hidden">Каталог.</p>
                 <ul class="popover-catalog-links-list">
                   <li class="popover-catalog-links-item">
                     <a class="popover-catalog-link" href="#">Новинки</a>
@@ -62,13 +63,15 @@
             </a>
             <div class="popover popover-search popover-search-close">
               <div class="popover-content">
-                <h2 class="visually-hidden">Поиск.</h2>
+                <p class="visually-hidden">Поиск.</p>
                 <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
-                  <label class="search-form-label">
+                  <label class="search-form-label" for="search-request">
                     <span class="visually-hidden">Поисковый запрос.</span>
-                    <input class="search-form-field" type="text" name="search-request" placeholder="Поиск по сайту"
-                      id="search-request" required>
                   </label>
+                  <input class="search-form-field" type="text" name="search-request" placeholder="Поиск по сайту" id="search-request" required>
+                  <button class="search-reset-button" type="reset">
+                    <span class="visually-hidden">Очистить поиск.</span>
+                  </button>
                   <button class="visually-hidden" type="submit">Найти.</button>
                 </form>
               </div>
@@ -78,7 +81,7 @@
             <a class="navigation-user-link log-in" href="#">Вход</a>
             <div class="popover popover-log-in popover-log-in-close">
               <div class="popover-content">
-                <h2 class="popover-title">Личный кабинет</h2>
+                <p class="popover-title">Личный кабинет</p>
                 <form class="log-in-form" action="https://echo.htmlacademy.ru/" method="post">
                   <label class="log-in-form-label">
                     <span class="visually-hidden">Email.</span>
@@ -109,7 +112,7 @@
             <a class="navigation-user-link cart" href="#">2 товара</a>
             <div class="popover popover-cart popover-cart-close">
               <div class="popover-content">
-                <h2 class="popover-title">Корзина</h2>
+                <p class="popover-title">Корзина</p>
                 <ul class="cart-items-list">
                   <li class="cart-item">
                     <div class="cart-item-title-description-container">
@@ -118,7 +121,6 @@
                     </div>
                     <p class="cart-item-price">310 ₽</p>
                     <button class="cart-item-button" type="button">
-                      <img src="img/cross-black.svg" width="10" height="10" alt="">
                       <span class="visually-hidden">Удалить из корзины.</span>
                     </button>
                   </li>
@@ -129,7 +131,6 @@
                     </div>
                     <p class="cart-item-price">480 ₽</p>
                     <button class="cart-item-button" type="button">
-                      <img src="img/cross-black.svg" width="10" height="10" alt="">
                       <span class="visually-hidden">Удалить из корзины.</span>
                     </button>
                   </li>
@@ -140,11 +141,7 @@
                 </div>
               </div>
             </div>
-            <div class="popover popover-cart empty">
-              <button class="popover-close-button navigation-user-link" type="button">
-                2 товара
-                <span class="visually-hidden">Закрыть.</span>
-              </button>
+            <div class="popover popover-cart empty popover-cart-close">
               <div class="popover-content">
                 <p class="popover-title">Ваша корзина пока пуста</p>
               </div>
@@ -166,19 +163,15 @@
                   вкуснейшим клубничным джемом – это идеальный десерт для всей семьи.</p>
                 <a class="button button-ordinary ice-cream-slider-order" href="#">Заказать</a>
               </div>
-              <div class="slider-right-side-container">
-                <div class="slider-controls">
-                  <button class="ice-cream-slider-button ice-cream-slider-left" type="button"></button>
-                  <button class="ice-cream-slider-button ice-cream-slider-right" type="button"></button>
-                </div>
+              <div class="slider-right-side-container strawberry">
                 <img class="slider-image" src="img/strawberry-ice-cream.png " width="306" height="507"
                   alt="Розовое мороженое политое красным джемом с взбитыми сливками в вафельном рожке.">
               </div>
-              <div class="slider-back-image-container">
+              <div class="slider-back-image-container strawberry">
                 <img class="slider-back-image" src="img/banana-ice-cream.png" width="90" height="148"
                   alt="Желтое мороженое тремя приплюснутыми кусочками в вафельном рожке.">
               </div>
-              <div class="slider-back-image-container">
+              <div class="slider-back-image-container strawberry">
                 <img class="slider-back-image" src="img/caramel-ice-cream.png" width="90" height="148"
                   alt="Белый пломбир вперемешку с карамелью и мятой на вершине в вафельном рожке.">
               </div>
@@ -190,42 +183,34 @@
                   свежесть и наслаждение даже в самый жаркий летний день.</p>
                 <a class="button button-ordinary ice-cream-slider-order" href="#">Заказать</a>
               </div>
-              <div class="slider-right-side-container">
-                <div class="slider-controls">
-                  <button class="ice-cream-slider-button ice-cream-slider-left" type="button"></button>
-                  <button class="ice-cream-slider-button ice-cream-slider-right" type="button"></button>
-                </div>
-                <img class="slider-image" src="img/banana-ice-cream.png" width="90" height="148"
+              <div class="slider-right-side-container banana">
+                <img class="slider-image" src="img/banana-ice-cream.png" width="306" height="507"
                   alt="Желтое мороженое тремя приплюснутыми кусочками в вафельном рожке.">
               </div>
-              <div class="slider-back-image-container">
+              <div class="slider-back-image-container banana">
                 <img class="slider-back-image" src="img/caramel-ice-cream.png" width="90" height="148"
                   alt="Белый пломбир вперемешку с карамелью и мятой на вершине в вафельном рожке.">
               </div>
-              <div class="slider-back-image-container">
-                <img class="slider-back-image" src="img/strawberry-ice-cream.png " width="306" height="507"
+              <div class="slider-back-image-container banana">
+                <img class="slider-back-image" src="img/strawberry-ice-cream.png " width="90" height="148"
                   alt="Розовое мороженое политое красным джемом с взбитыми сливками в вафельном рожке.">
               </div>
             </li>
             <li class="ice-cream-slider-item">
               <div class="slider-left-side-container">
                 <h3 class="ice-cream-slider-item-name">Карамельный пломбир<br>с маршмеллоу</h3>
-                <p class="ice-cream-slider-item-description">Необычный сладкий десерт с карамельным топпингом и кусочками зефира завоюет сердца сладкоежек всех возрастов.</p>
+                <p class="ice-cream-slider-item-description">Необычный сладкий десерт с карамельным топпингом и кусочками зефира завоюет<br>сердца сладкоежек всех возрастов.</p>
                 <a class="button button-ordinary ice-cream-slider-order" href="#">Заказать</a>
               </div>
-              <div class="slider-right-side-container">
-                <div class="slider-controls">
-                  <button class="ice-cream-slider-button ice-cream-slider-left" type="button"></button>
-                  <button class="ice-cream-slider-button ice-cream-slider-right" type="button"></button>
-                </div>
-                <img class="slider-image" src="img/caramel-ice-cream.png" width="90" height="148"
+              <div class="slider-right-side-container caramel">
+                <img class="slider-image" src="img/caramel-ice-cream.png" width="306" height="507"
                   alt="Белый пломбир вперемешку с карамелью и мятой на вершине в вафельном рожке.">
               </div>
-              <div class="slider-back-image-container">
-                <img class="slider-back-image" src="img/strawberry-ice-cream.png " width="306" height="507"
+              <div class="slider-back-image-container caramel">
+                <img class="slider-back-image" src="img/strawberry-ice-cream.png " width="90" height="148"
                   alt="Розовое мороженое политое красным джемом с взбитыми сливками в вафельном рожке.">
               </div>
-              <div class="slider-back-image-container">
+              <div class="slider-back-image-container caramel">
                 <img class="slider-back-image" src="img/banana-ice-cream.png" width="90" height="148"
                   alt="Желтое мороженое тремя приплюснутыми кусочками в вафельном рожке.">
               </div>
@@ -291,6 +276,10 @@
               </li>
             </ul>
           </div>
+          <div class="slider-controls">
+            <button class="ice-cream-slider-button ice-cream-slider-left" type="button"></button>
+            <button class="ice-cream-slider-button ice-cream-slider-right" type="button"></button>
+          </div>
         </section>
         <section class="gifts">
           <h2 class="gifts-title">Заказывайте мороженое<br>и получайте подарки!</h2>
@@ -313,7 +302,7 @@
           <ul class="goods-list">
             <li class="goods-item">
               <a class="goods-item-link" href="#">
-                <img class="goods-image" src="img/raspberry-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="goods-image" src="img/raspberry-ice-cream-round.png" width="168" height="168" alt="Шарик текстурного розового мороженого.">
                 <h3 class="goods-item-name">Малинка</h3>
                 <p class="goods-item-description">Сливочное мороженое с малиновым джемом</p>
               </a>
@@ -329,7 +318,7 @@
             </li>
             <li class="goods-item">
               <a class="goods-item-link" href="#">
-                <img class="goods-image" src="img/pistachio-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="goods-image" src="img/pistachio-ice-cream-round.png" width="168" height="168" alt="Светло-зеленый шарик мороженого с несколькими кусочками шоколада.">
                 <h3 class="goods-item-name">Фисташка</h3>
                 <p class="goods-item-description">Фисташковый пломбир с кусочками шоколада</p>
               </a>
@@ -345,7 +334,7 @@
             </li>
             <li class="goods-item">
               <a class="goods-item-link" href="#">
-                <img class="goods-image" src="img/blueberry-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="goods-image" src="img/blueberry-ice-cream-round.png" width="168" height="168" alt="Шарик бежевого мороженого с прожилками черничного джема.">
                 <h3 class="goods-item-name">Черника</h3>
                 <p class="goods-item-description">Крем-брюле<br>с черничным джемом</p>
               </a>
@@ -361,7 +350,7 @@
             </li>
             <li class="goods-item">
               <a class="goods-item-link" href="#">
-                <img class="goods-image" src="img/bubble-gum-ice-cream-round.png" width="168" height="168" alt="">
+                <img class="goods-image" src="img/bubble-gum-ice-cream-round.png" width="168" height="168" alt="Голубой шар мороженого посыпанный разноцветными шариками.">
                 <h3 class="goods-item-name">Бабл-гам</h3>
                 <p class="goods-item-description">Ванильный пломбир<br>со сладкой посыпкой</p>
               </a>
@@ -435,6 +424,7 @@
                   </button>
                 </span>
                 <label class="delivery-date-label">
+                  <span class="visually-hidden">Дата доставки.</span>
                   <input class="form-field delivery-date" type="text" name="delivery-order-form-date"
                     placeholder="01.04.2020" required>
                 </label>
@@ -459,6 +449,7 @@
                 </button>
               </span>
               <label class="delivery-address-label">
+                <span class="visually-hidden">Адрес доставки.</span>
                 <input class="form-field delivery-address" type="text" name="delivery-order-form-address"
                   placeholder="ул. Большая Конюшенная, 19/8" required>
               </label>
@@ -549,7 +540,7 @@
           <a class="made-in-link" href="https://htmlacademy.ru/">
             <img class="logo" src="img/logo_htmlacademy.svg" width="93" height="27" alt="Логотип Академии HTML.">
           </a>
-          <p class="made-in-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a>© 2021</p>
+          <p class="made-in-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a> © 2021</p>
         </section>
       </div>
     </footer>
